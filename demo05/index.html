@@ -9,17 +9,18 @@
   <body>
     <div id="example"></div>
     <script type="text/babel">
+        {var getList = function(child){
+            return <li>{child}</li>;
+        }}
       class NotesList extends React.Component {
-        render() {
+        render() { alert('Attention Please');
           return (
             <ol>
               {
-                React.Children.map(this.props.children, function (child) {
-                  return <li>{child}</li>;
-                })
+                React.Children.map(this.props.children, getList)
               }
             </ol>
-          );
+          ); 
         }
       }
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -10,17 +10,64 @@
     <div id="example"></div>
     <script type="text/babel">
       var names = ['Alice', 'Emily', 'Kate'];
-
+      var namelist = function (name, index){
+        return <div key={index}>Hello, {name}!</div>
+      }
       ReactDOM.render(
         <div>
         {
-          names.map(function (name, index) {
-            return <div key={index}>Hello, {name}!</div>
-          })
+        //   names.map(function (name, index) {
+            // return <div key={index}>Hello, {name}!</div>
+        //   })
+            names.map(namelist)
         }
         </div>,
         document.getElementById('example')
       );
     </script>
   </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+
+<body>
+
+    <div id="example"></div>
+    <script type="text/babel">
+
+    var  inlineStyle={
+        fontSize : 100,
+        color : '#FF0000'
+    }; 
+ReactDOM.render(
+    <span>
+    <h1 style={inlineStyle}>菜鸟教程</h1>
+    <h2>欢迎学习 React</h2>
+    <p data-myattribute = "somevalue">这是一个很不错的 JavaScript 库!</p>
+    </span>
+    ,
+    document.getElementById('example')
+);
+</script>
+
+    <div id="examplee"></div>
+  <script type="text/babel" src="hw.js"></script>
+
+
+    <!-- <div id="examplee"></div>
+    <script type="text/babel" src="hw.js"></script>
+    </script> -->
+
+</body>
+
 </html>

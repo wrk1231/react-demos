@@ -11,14 +11,26 @@
     <script type="text/babel">
       class HelloMessage extends React.Component {
         render() {
-          return <h1>Hello {this.props.name}</h1>;
+          return <h1>Hello {this.props.id}</h1>;
         }
       }
+      
+//       var HelloMessage = React.createClass({
+//             render: function() {
+//         return <h1>Hello {this.props.name}</h1>;
+//   }
+// });
 
       ReactDOM.render(
-        <HelloMessage name="John" />,
+        <HelloMessage id="John" />,
         document.getElementById('example')
       );
+
+
+// ReactDOM.render(
+//   <HelloMessage name="John" />,
+//   document.getElementById('example')
+// );
     </script>
   </body>
 </html>

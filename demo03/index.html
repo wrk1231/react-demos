@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="index.css">
     <meta charset="UTF-8" />
     <script src="../build/react.development.js"></script>
     <script src="../build/react-dom.development.js"></script>
@@ -9,14 +10,59 @@
   <body>
     <div id="example"></div>
     <script type="text/babel">
-      var arr = [
-        <h1 key="1">Hello world!</h1>,
-        <h2 key="2">React is awesome</h2>,
-      ];
-      ReactDOM.render(
-        <div>{arr}</div>,
-        document.getElementById('example')
-      );
+
+
+
+class Name extends React.Component{
+    render(){
+        return <h1>网站名称：{props.name}</h1>;        
+    }
+}
+
+class Url extends React.Component{
+    render(){
+        return <h1>网站地址：{props.url}</h1>;
+    }
+}
+
+class Nickname extends React.Component {
+    render(){
+        return <h1>网站小名：{props.nickname}</h1>;
+    }
+}
+
+function App() {
+    ReactDOM.render(
+    <div>
+        <Name name="菜鸟教程" />
+        <Url url="http://www.runoob.com" />
+        <Nickname nickname="Runoob" />
+    </div>
+    ,
+    document.getElementById('example')
+    );
+}
+ 
+ReactDOM.render(
+     <App />,
+    document.getElementById('example')
+);
+      
     </script>
+    <div id="cg"></div>
+    <script type="text/babel">
+        class HW extends React.Component{
+            render(){
+                return <h1>hello {this.props.name}</h1>
+            }
+        };
+
+        ReactDOM.render(
+            <HW name="fuck" />,
+            document.getElementById("cg")
+        );
+
+    </script>
+
   </body>
 </html>
